@@ -1,4 +1,4 @@
-### N Queens and No-three-inline Solver
+### N Queens and No-three-in-line Solver
 
 This program implements a binary, symmetry aware, backtracking solution to 
 the N Queens problem. The algorithm is based primarily on the work in the paper,
