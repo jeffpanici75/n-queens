@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id "application"
+}
+
+group 'io.nybbles'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    applicationName = "nqueens-solver"
+    mainClassName = "io.nybbles.nqueens.Main"
+
+    applicationDefaultJvmArgs = ['--enable-preview', '-Xmx8192m']
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_13
+}
+
+dependencies {
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}
+
+tasks.test {
+    jvmArgs('--enable-preview')
+}
